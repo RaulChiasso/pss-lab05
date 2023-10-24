@@ -27,36 +27,52 @@ public class StrictBankAccount implements BankAccount{
         return this.transactions;
     }
 
+    private boolean validID(final int id) {
+        if(this.id == id) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean checkBalance(final double amount) {
+        if(this.balance >= amount) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void deposit(final int id, final double amount) {
-        if (this.id == id) {
+        if (validID(id)) {
             this.balance += amount;
             this.transactions++;
         }
     }
 
     public void withdraw(final int id, final double amount) {
-        if (this.id == id && this.balance >= amount) {
+        if (validID(id) && checkBalance(amount)) {
             this.balance -= amount;
             this.transactions++;
         }
     }
 
     public void depositFromATM(final int id, final double amount) {
-        if (this.id == id) {
+        if (validID(id)) {
             this.balance += (amount - ATM_TRANSACTION_FEE);
             this.transactions++;
         }
     }
 
     public void withdrawFromATM(final int id, final double amount) {
-        if (this.id == id && this.balance >= amount) {
+        if (validID(id) && checkBalance(amount)) {
             this.balance -= (amount - ATM_TRANSACTION_FEE);
             this.transactions++;
         }
     }
 
     public void chargeManagementFees(final int id) {
-        if (this.id == id) {
+        if (validID(id)) {
             this.balance -= MANAGEMENT_FEE + (this.transactions * 0.1);
         }
     }
