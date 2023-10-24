@@ -9,14 +9,14 @@ public class Smartphone {
     private static final int DEF_RAM_SIZE = 8192;
     private static final int DEF_N_CPU = 8;
 
-    public final int cpuCount;
-    public final int ram;
-    public final int sdSize;
-    public final String brand;
-    public final String model;
-    public final boolean hasGPS;
-    public final boolean has3G;
-    public final boolean hasNFC;
+    private final int cpuCount;
+    private final int ram;
+    private final int sdSize;
+    private final String brand;
+    private final String model;
+    private final boolean hasGPS;
+    private final boolean has3G;
+    private final boolean hasNFC;
 
     public Smartphone(
         final int cpuCount,
@@ -42,16 +42,114 @@ public class Smartphone {
         this(brand, model, DEF_SD_SIZE);
     }
 
-    public Smartphone(final String brand, final String model, final int sdSize) {
-        this(DEF_N_CPU, DEF_RAM_SIZE, sdSize, brand, model, DEF_HAS_GPS, DEF_HAS_3G, DEF_HAS_NFC);
+    public Smartphone(
+        final String brand,
+         final String model,
+          final int sdSize
+    ) {
+        this(DEF_N_CPU, 
+        DEF_RAM_SIZE, 
+        sdSize, 
+        brand,
+        model, 
+        DEF_HAS_GPS, 
+        DEF_HAS_3G, 
+        DEF_HAS_NFC);
     }
 
-    public Smartphone(final String brand, final String model, final boolean hasNFC) {
-        this(DEF_N_CPU, DEF_RAM_SIZE, DEF_SD_SIZE, brand, model, DEF_HAS_GPS, DEF_HAS_3G, hasNFC);
+    public Smartphone(
+        final String brand, 
+        final String model, 
+        final boolean hasNFC
+    ) {
+        this(DEF_N_CPU, 
+        DEF_RAM_SIZE, 
+        DEF_SD_SIZE, 
+        brand, 
+        model, 
+        DEF_HAS_GPS,
+        DEF_HAS_3G, 
+        hasNFC);
     }
 
-    public Smartphone(final String brand, final String model, final boolean hasGPS, final boolean has3G) {
-        this(DEF_N_CPU, DEF_RAM_SIZE, DEF_SD_SIZE, brand, model, hasGPS, has3G, DEF_HAS_NFC);
+    public Smartphone(
+        final String brand, 
+        final String model, 
+        final boolean hasGPS, 
+        final boolean has3G
+    ) {
+        this(DEF_N_CPU, 
+        DEF_RAM_SIZE, 
+        DEF_SD_SIZE, 
+        brand, 
+        model, 
+        hasGPS, 
+        has3G, 
+        DEF_HAS_NFC);
+    }
+
+    public int setCpuCount(final int cpuCount) {
+        return cpuCount;
+    }
+
+    public int setRam(final int ram) {
+        return ram;
+    }
+
+    public int setSdSize(final int sdSize) {
+        return sdSize;
+    }   
+
+    public String setBrand(final String brand) {
+        return brand;
+    }
+
+    public String setModel(final String model) {
+        return model;
+    }
+
+    public boolean setHasGPS(final boolean hasGPS) {
+        return hasGPS;
+    }
+
+    public boolean setHas3G(final boolean has3G) {
+        return has3G;
+    }
+
+    public boolean setHasNFC(final boolean hasNFC) {
+        return hasNFC;
+    }
+
+    public int getCpuCount() {
+        return cpuCount;
+    }
+
+    public int getRam() {
+        return ram;
+    }
+
+    public int getSdSize() {
+        return sdSize;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public boolean hasGPS() {
+        return hasGPS;
+    }
+
+    public boolean has3G() {
+        return has3G;
+    }
+
+    public boolean hasNFC() {
+        return hasNFC;
     }
 
     public void printStringRep() {
@@ -67,14 +165,28 @@ public class Smartphone {
 
     public static void main(final String[] args) {
         // 1) Creare lo smarthpone HTC One sdSize:1024
-        final Smartphone htcOne = new Smartphone("HTC", "One", 1024);
+        final Smartphone htcOne = new Smartphone("HTC",
+                                                 "One", 
+                                                1024);
         // 2) Creare lo smarthpone Samsung Galaxy Note 3 ram:2048 cpu:4
         // sdSize:8192 gps:true nfc:true 3g:true
-        final Smartphone note3 = new Smartphone(4, 2048, 8192, "Samsung", "Galaxy Note 3", true, true, true);
+        final Smartphone note3 = new Smartphone(4, 
+                                                2048, 
+                                                8192, 
+                                                "Samsung",
+                                                "Galaxy Note 3",
+                                                true, 
+                                                true, 
+                                                true);
         // 3) Creare lo smarthpone Apple iPhone 5S nfc:false
-        final Smartphone iPhone5S = new Smartphone("Apple", "iPhone 5S", false);
+        final Smartphone iPhone5S = new Smartphone("Apple", 
+                                                   "iPhone 5S", 
+                                                   false);
         // 4) Creare lo smarthpone Google Nexus 4 gps:true 3g:true
-        final Smartphone nexus4 = new Smartphone("Google", "Nexus 4", true, true);
+        final Smartphone nexus4 = new Smartphone("Google", 
+                                                 "Nexus 4", 
+                                                 true, 
+                                                 true);
         // 5) Utilizzare il metodo printStringRep per stampare in standard
         // output le informazioni di ciascun telefono
         htcOne.printStringRep();
