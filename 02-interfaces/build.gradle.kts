@@ -6,5 +6,5 @@ plugins {
 repositories { mavenCentral() } // Configura Gradle per cercare e scaricare da Maven Central
 
 application { // Configurazione dell'esecuzione, la main class è sufficiente
-    mainClass.set("it.unibo.encapsulation.interfaces.Main")
+    mainClass.set("it.unibo.encapsulation.interfaces.SimpleBanckAccount")
 }
