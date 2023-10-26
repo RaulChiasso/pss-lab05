@@ -1,5 +1,7 @@
 package it.unibo.composition;
 
+import java.util.Arrays;
+
 public class Exam {
 
     private int id;
@@ -15,8 +17,7 @@ public class Exam {
         int maxStudents, 
         String courseName, 
         Professor professor, 
-        ExamRoom room,
-        Student[] students
+        ExamRoom room
     ) {
         this.id = id;
         this.maxStudents = maxStudents;
@@ -83,14 +84,14 @@ public class Exam {
     }
 
     public String toString() {
-        return "Student ["
-            + "courseName=" + this.courseName
-            + ", id=" + this.id
-            + ", maxStudents=" + this.maxStudents
-            + ", registeredStudents=" + this.registeredStudents
-            + ", professor=" + this.professor
-            + ", room=" + this.room
-            + ", students=" + this.students.toString()
+        return "Exam ["
+            + "courseName=" + this.courseName + "\n"
+            + ", id=" + this.id + "\n"
+            + ", maxStudents=" + this.maxStudents + "\n"
+            + ", registeredStudents=" + this.registeredStudents + "\n"
+            + ", professor=" + this.professor + "\n"
+            + ", room=" + this.room + "\n"
+            + ", students=" + Arrays.toString(students)
             + "]";
     }    
 }
