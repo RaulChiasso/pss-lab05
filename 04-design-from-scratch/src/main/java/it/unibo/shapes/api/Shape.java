@@ -2,7 +2,7 @@ package it.unibo.shapes.api;
 
 public interface Shape {
 
-    int area(int base, int height);
+    double area();
 
-    int perimeter(int base, int height);
+    double perimeter();
 }
