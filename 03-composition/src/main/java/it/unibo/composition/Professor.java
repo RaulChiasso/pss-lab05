@@ -76,7 +76,7 @@ public class Professor implements User {
             + "name=" + this.name
             + ", surname=" + this.surname
             + ", id=" + this.id
-            + ", courses=" + this.courses
+            + ", courses=" + this.courses.toString()
             + "]";
     }
 }
