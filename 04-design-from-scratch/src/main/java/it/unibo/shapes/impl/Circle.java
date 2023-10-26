@@ -1,10 +1,9 @@
 package it.unibo.shapes.impl;
 
 import it.unibo.shapes.api.Shape;
+import java.lang.Math;
 
 public class Circle implements Shape{
-
-    private static final double PI = 3.14;
 
     private double radius;
 
@@ -14,12 +13,12 @@ public class Circle implements Shape{
 
     @Override
     public double area() {
-        return radius*radius*PI;
+        return radius*radius*Math.PI;
     }
 
     @Override
     public double perimeter() {
-        return radius*2*PI;
+        return radius*2*Math.PI;
     }
     
 }
